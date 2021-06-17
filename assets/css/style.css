@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&family=Raleway&family=Roboto+Mono&display=swap');
+
+/* ----------------------------------------COLOURS VARIABLE---------------------------------- */
+
+:root {
+    --jet: #423e3b;
+    --crayola: #d6e3f8;
+    --bright: #5aff15;
+  }
+
+/* ----------------------------------------SPECIAL FONTS/COLOURS---------------------------------- */
+
+body {
+  margin: 0 auto;
+  background-color: var(--jet);
+  color: var(--crayola);
+}
+
+h1, h2 {
+  font-family: 'Roboto Mono', monospace;
+}
+
+p, button, ul li {
+  font-family: 'Raleway', sans-serif;
+}
+
+ul li a, footer p {
+  color: var(--bright);
+  background-color: var(--jet);
+}
+
+/* display nav links on left/right side */
+.nav {
+  justify-content: space-between;
+}
+
+a:hover {
+  color: var(--crayola);
+  border: 1px solid var(--bright);
+}
+
+.custom-colours {
+  color: var(--crayola);
+}
+
+.red-border {
+  border: 1px solid red;
+}
+
+.green-border {
+  border: 1px solid green;
+}
