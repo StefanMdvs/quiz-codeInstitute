@@ -10,7 +10,7 @@ class ApiRequest {
             let asJSON = JSON.parse(request.responseText);
             resolve(asJSON);
           } else {
-            reject(console.log("Oops! Something went wrong"));
+            reject(console.log("Oops! Something went wrong", error));
           }
         }
       }
@@ -25,9 +25,10 @@ for(let button of buttons) {
   button.addEventListener('click', function(e) {
     let id = e.target.id;
     let client = new ApiRequest();
+    //get the id of each button in order to generate the right set of questions
     let questionCategory = id === 'mixed' ?
-                                  client.sendHTTPRequest('GET', 'https://opentdb.com/api.php?amount=10') :
-                                  client.sendHTTPRequest('GET', 'GET', `https://opentdb.com/api.php?amount=10&category=${id}`)
+          client.sendHTTPRequest('GET', 'https://opentdb.com/api.php?amount=10') :
+          client.sendHTTPRequest('GET', `https://opentdb.com/api.php?amount=10&category=${id}`)
     questionCategory.then((data) => {
       console.log(data.results)
     })
