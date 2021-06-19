@@ -1,4 +1,3 @@
-let buttons = document.getElementsByTagName('button');
 
 class ApiRequest {
   sendHTTPRequest (type, url) {
@@ -19,8 +18,35 @@ class ApiRequest {
     });
     return promise;
   }
+
+  formattedQuestion(results) {
+    var questionArray = results.map((data) => {
+      const formattedQ = {
+        question: data.question
+      };
+      const answers = [...data.incorrect_answers];
+      formattedQ.correct = data.correct_answer;
+      //get the index where the correct answer will be inserted
+      let sliceIndex = answers.length > 1 ?
+          Math.floor(Math.random() * 4) + 1 :
+          Math.floor(Math.random() * 2) + 1;
+      //insert correct answer
+      answers.splice(sliceIndex, 0, formattedQ.correct);
+      //assign the answers to each question
+      answers.forEach((answer, i) => {
+        formattedQ['answer' + (i+1)] = answer;
+      });
+      return formattedQ;
+    });
+    return questionArray;
+  }
+
+  getRandomQuestion() {
+
+  }
 }
 
+let buttons = document.getElementsByTagName('button');
 for(let button of buttons) {
   button.addEventListener('click', function(e) {
     let id = e.target.id;
@@ -30,8 +56,11 @@ for(let button of buttons) {
           client.sendHTTPRequest('GET', 'https://opentdb.com/api.php?amount=10') :
           client.sendHTTPRequest('GET', `https://opentdb.com/api.php?amount=10&category=${id}`)
     questionCategory.then((data) => {
-      console.log(data.results)
+      return data.results;
+    }).then((question) => {
+      let formatted = client.formattedQuestion(question);
+      console.log(formatted)
     })
-    console.log(id)
+    
   })
 }
