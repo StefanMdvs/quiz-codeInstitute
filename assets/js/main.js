@@ -41,9 +41,15 @@ class ApiRequest {
     return questionArray;
   }
 
-  getRandomQuestion() {
+  getRandomQuestion(questions) {
+    let questionIndex = Math.floor(Math.random() * questions.length);
+    let currentQuestion = questions[questionIndex];
+    //remove the current question from the question array after displaying it
+    questions.splice(questionIndex, 1);
 
+    return currentQuestion;
   }
+
 }
 
 let buttons = document.getElementsByTagName('button');
@@ -56,10 +62,12 @@ for(let button of buttons) {
           client.sendHTTPRequest('GET', 'https://opentdb.com/api.php?amount=10') :
           client.sendHTTPRequest('GET', `https://opentdb.com/api.php?amount=10&category=${id}`)
     questionCategory.then((data) => {
-      return data.results;
-    }).then((question) => {
-      let formatted = client.formattedQuestion(question);
-      console.log(formatted)
+      let formattedData = data.results;
+      let availableQuestions = client.formattedQuestion(formattedData);
+      return availableQuestions;
+    }).then((availableQuestions) => {
+      let randomQuestion = client.getRandomQuestion(availableQuestions);
+      console.log(randomQuestion)
     })
     
   })
