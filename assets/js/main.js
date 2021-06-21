@@ -64,6 +64,14 @@ class ApiRequest {
   }
 
   checkAnswer(availableQuestions, randomQuestion) {
+    if(availableQuestions.length === 0) {
+      return window.location.assign('/end.html')
+      /*
+      After the ninth question the last one is displayed
+      but the end quiz page is being loaded straight away
+      before the user can answer
+      */
+    }
     let correctAnswer = randomQuestion.correct;
     let paragraphs = document.getElementsByClassName('answer');
     for(let p of paragraphs) {
@@ -75,6 +83,7 @@ class ApiRequest {
         
         setTimeout(() => {
           p.classList.remove(HTMLClass);
+          this.updateProgress();
           let nextQuestion = this.getRandomQuestion(availableQuestions);
           this.displayQuestion(nextQuestion);
           console.log(nextQuestion)
@@ -82,14 +91,20 @@ class ApiRequest {
         }, 1000);
       });
     }
-    /* Fix Bug: first question gets compared with the correct answer. Questions generated after, compare the user
-    selection with first correct answer still hence any selection highlights red, even though it is correct
-    On click, available question array is changing
-    */
   }
+
+  updateProgress() {
+    counter++;
+    let maxQuestion = 10;
+    let progressBar = document.getElementById('progress');
+    progressBar.innerHTML = `Question ${counter}/${maxQuestion}`
+  }
+
+  
   
 }
 
+let counter = 0;
 let buttons = document.getElementsByTagName('button');
 for(let button of buttons) {
   button.addEventListener('click', function(e) {
@@ -106,8 +121,10 @@ for(let button of buttons) {
     }).then((availableQuestions) => {
       let randomQuestion = client.getRandomQuestion(availableQuestions);
       console.log(randomQuestion)
-     console.log(client.displayQuestion(randomQuestion));
-     console.log(client.checkAnswer(availableQuestions, randomQuestion));
+      client.displayQuestion(randomQuestion);
+      client.checkAnswer(availableQuestions, randomQuestion);
+      client.updateProgress();
+      
     })
     
   })
