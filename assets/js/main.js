@@ -78,7 +78,7 @@ class ApiRequest {
           let nextQuestion = this.getRandomQuestion(availableQuestions);
           this.displayQuestion(nextQuestion);
           console.log(nextQuestion)
-          this.checkAnswer(availableQuestions, randomQuestion)
+          this.checkAnswer(availableQuestions, nextQuestion)
         }, 1000);
       });
     }
