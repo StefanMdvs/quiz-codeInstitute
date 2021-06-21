@@ -50,6 +50,19 @@ class ApiRequest {
     return currentQuestion;
   }
 
+  displayQuestion(currQ) {
+    //use object destructuring to access the answers
+    const {question, correct, answer, ...answers} = currQ;
+    let displayedAnswers = [];
+    for (let answer in answers) {
+      displayedAnswers += `<p class="answer">${answers[answer]}</p>`
+    }
+    let hideCategories = document.getElementById('hide');
+    hideCategories.style.display = 'none';
+    document.getElementById('question').innerHTML = currQ.question;
+    document.getElementById('answers').innerHTML = displayedAnswers;
+  }
+
 }
 
 let buttons = document.getElementsByTagName('button');
@@ -68,6 +81,7 @@ for(let button of buttons) {
     }).then((availableQuestions) => {
       let randomQuestion = client.getRandomQuestion(availableQuestions);
       console.log(randomQuestion)
+     console.log(client.displayQuestion(randomQuestion));
     })
     
   })
