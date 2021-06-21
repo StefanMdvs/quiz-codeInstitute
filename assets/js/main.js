@@ -63,6 +63,31 @@ class ApiRequest {
     document.getElementById('answers').innerHTML = displayedAnswers;
   }
 
+  checkAnswer(availableQuestions, randomQuestion) {
+    let correctAnswer = randomQuestion.correct;
+    let paragraphs = document.getElementsByClassName('answer');
+    for(let p of paragraphs) {
+      p.addEventListener('click', (e) => {
+        let userSelection = e.target;
+        let HTMLClass = userSelection.innerHTML === correctAnswer ? 
+                        'green-border' : 'red-border';
+        p.classList.add(HTMLClass);
+        
+        setTimeout(() => {
+          p.classList.remove(HTMLClass);
+          let nextQuestion = this.getRandomQuestion(availableQuestions);
+          this.displayQuestion(nextQuestion);
+          console.log(nextQuestion)
+          this.checkAnswer(availableQuestions, randomQuestion)
+        }, 1000);
+      });
+    }
+    /* Fix Bug: first question gets compared with the correct answer. Questions generated after, compare the user
+    selection with first correct answer still hence any selection highlights red, even though it is correct
+    On click, available question array is changing
+    */
+  }
+  
 }
 
 let buttons = document.getElementsByTagName('button');
@@ -82,6 +107,7 @@ for(let button of buttons) {
       let randomQuestion = client.getRandomQuestion(availableQuestions);
       console.log(randomQuestion)
      console.log(client.displayQuestion(randomQuestion));
+     console.log(client.checkAnswer(availableQuestions, randomQuestion));
     })
     
   })
