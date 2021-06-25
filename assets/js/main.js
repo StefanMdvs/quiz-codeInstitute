@@ -46,7 +46,6 @@ class ApiRequest {
     let currentQuestion = questions[questionIndex];
     //remove the current question from the question array after displaying it
     questions.splice(questionIndex, 1);
-
     return currentQuestion;
   }
 
@@ -64,22 +63,30 @@ class ApiRequest {
   }
 
   checkAnswer(availableQuestions, randomQuestion) {
-    if(availableQuestions.length === 0) {
-      return window.location.assign('/end.html')
+    if(availableQuestions.length == 0 || counter >= 10) {
+      localStorage.setItem('rightQuestions', score);
+      return window.location.assign("/endGame.html");
+      
       /*
       After the ninth question the last one is displayed
-      but the end quiz page is being loaded straight away
+      but the end message is being loaded straight away
       before the user can answer
+      Is there another way of delaying the loading of end page without using setTimeout?
       */
     }
+    
     let correctAnswer = randomQuestion.correct;
     let paragraphs = document.getElementsByClassName('answer');
     for(let p of paragraphs) {
       p.addEventListener('click', (e) => {
-        let userSelection = e.target;
-        let HTMLClass = userSelection.innerHTML === correctAnswer ? 
+        let userSelection = e.target.innerHTML;
+       
+        let HTMLClass = userSelection === correctAnswer ? 
                         'green-border' : 'red-border';
         p.classList.add(HTMLClass);
+        if(HTMLClass === 'green-border') {
+          score+=1;
+        }
         
         setTimeout(() => {
           p.classList.remove(HTMLClass);
@@ -87,9 +94,10 @@ class ApiRequest {
           let nextQuestion = this.getRandomQuestion(availableQuestions);
           this.displayQuestion(nextQuestion);
           console.log(nextQuestion)
-          this.checkAnswer(availableQuestions, nextQuestion)
+          this.checkAnswer(availableQuestions, nextQuestion);
         }, 1000);
       });
+      console.log(score)
     }
   }
 
@@ -97,17 +105,38 @@ class ApiRequest {
     counter++;
     let maxQuestion = 10;
     let progressBar = document.getElementById('progress');
-    progressBar.innerHTML = `Question ${counter}/${maxQuestion}`
+    //add class to style question display
+    progressBar.innerHTML = `Question ${counter}/${maxQuestion} from ${category}`;
   }
 
   
+  // counter() {
+  //   /*
+  //   Solution found here https://stackoverflow.com/questions/5517597/plain-count-up-timer-in-javascript
+  //   */
+  //   var start = Math.floor(Date.now() / 1000);
+        
+  //   function pad(val) {
+  //     return val > 9 ? val : '0' + val;
+  //   }
+  //   function count() {
+  //     var seconds = Math.floor((Date.now() / 1000 - start)  % 60);
+  //     var minutes = Math.floor((Date.now() / 1000 - start) / 60);
+  //     document.getElementById('timer').innerHTML = `${pad(parseInt(minutes))}:${pad(seconds)}`;
+  //   }
+  //   setInterval(count, 1000);
+  // }
   
 }
 
 let counter = 0;
+let score = 0;
+let category;
 let buttons = document.getElementsByTagName('button');
 for(let button of buttons) {
   button.addEventListener('click', function(e) {
+    category = e.target.innerText;
+    console.log(category)
     let id = e.target.id;
     let client = new ApiRequest();
     //get the id of each button in order to generate the right set of questions
@@ -120,10 +149,13 @@ for(let button of buttons) {
       return availableQuestions;
     }).then((availableQuestions) => {
       let randomQuestion = client.getRandomQuestion(availableQuestions);
+      
       console.log(randomQuestion)
       client.displayQuestion(randomQuestion);
       client.checkAnswer(availableQuestions, randomQuestion);
       client.updateProgress();
+      //client.counter()
+      
       
     })
     
