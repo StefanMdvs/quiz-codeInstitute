@@ -15,13 +15,13 @@
     <header>
       <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">How to play</a>
+            <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#myModal2" >About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
-    </header>
+  </header>
     <div class="container">
       <div>
         <h1 class="text-center p-3">Quiz complete!</h1>
@@ -34,6 +34,31 @@
         <script>document.write(new Date().getFullYear());</script>
       </p>
     </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal2" tabindex="-1" aria-labelledby="myModal2Label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="myModal2Label">About the Quiz game</h3>
+            <a type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+          </div>
+          <div class="modal-body">
+            <p>This Quiz game was created using Open Trivia Database API.</p>
+            <p>To start the game choose a category then you will get 10 questions of medium difficulty from
+              your chosen category.
+            </p>
+            <p>If your selection is the right answer, it will highlight in <span class="green">green</span>, otherwise you will see
+              your selection highlited in <span class="red">red</span>.
+            </p>
+            <p>At the end, you will be able to see how many questions you got right.</p>
+            <p>Have fun!</p>
+          </div>
+          <div class="modal-footer">
+            <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="assets/js/end.js"></script>
   </body>
 </html>

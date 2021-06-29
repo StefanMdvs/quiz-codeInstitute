@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" 
           rel="stylesheet"
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" 
@@ -20,7 +21,7 @@
     <header>
         <ul class="nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">How to play</a>
+              <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#myModal" >About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
@@ -30,43 +31,43 @@
     <section class="container">
       <div id="hide">
         <h1 class="text-center p-3">It's QUIZ time!</h1>
-      <p class="text-center p-2">Get your brain in <strong>shape</strong> for quiz night.</p>
-      <h2 class="text-center">Choose a category</h2>
-      <div>
-        <div class="row text-center">
-          <!-- The buttons' id will match the id from the API call -->
-          <div class="col-sm-12 col-md-6 d-grid gap-2">
-            <button id="mixed" class="btn btn-outline-dark btn-lg">Mixed</button>
+        <p class="text-center p-2">Get your brain in <strong>shape</strong> for quiz night.</p>
+        <h2 class="text-center">Choose a category</h2>
+        <div>
+          <div class="row text-center">
+            <!-- The buttons' id will match the id from the API call -->
+            <div class="col-sm-12 col-md-6 d-grid gap-2">
+              <button id="mixed" class="btn btn-outline-dark btn-lg">Mixed</button>
+            </div>
+            <div class="col-sm-12 col-md-6 d-grid gap-2">
+              <button id="9" class="btn btn-outline-dark btn-lg">General knowledge</button> 
+            </div>
           </div>
-          <div class="col-sm-12 col-md-6 d-grid gap-2">
-            <button id="9" class="btn btn-outline-dark btn-lg">General knowledge</button> 
+          <div class="row text-center">
+            <div class="col-sm-12 col-md-6 d-grid gap-2">
+              <button id="11" class="btn btn-outline-dark btn-lg">Film</button> 
+            </div>
+            <div class="col-sm-12 col-md-6 d-grid gap-2">
+              <button id="12" class="btn btn-outline-dark btn-lg">Music</button>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-sm-12 col-md-6 d-grid gap-2">
+              <button id="14" class="btn btn-outline-dark btn-lg">Television</button>
+            </div>
+            <div class="col-sm-12 col-md-6 d-grid gap-2">
+              <button id="21" class="btn btn-outline-dark btn-lg">Sports</button>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-sm-12 col-md-6 d-grid gap-2">
+              <button id="26" class="btn btn-outline-dark btn-lg">Celebrities</button>
+            </div>
+            <div class="col-sm-12 col-md-6 d-grid gap-2">
+              <button id="27" class="btn btn-outline-dark btn-lg">Animals</button>
+            </div>
           </div>
         </div>
-        <div class="row text-center">
-          <div class="col-sm-12 col-md-6 d-grid gap-2">
-            <button id="11" class="btn btn-outline-dark btn-lg">Film</button> 
-          </div>
-          <div class="col-sm-12 col-md-6 d-grid gap-2">
-            <button id="12" class="btn btn-outline-dark btn-lg">Music</button>
-          </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-sm-12 col-md-6 d-grid gap-2">
-            <button id="14" class="btn btn-outline-dark btn-lg">Television</button>
-          </div>
-          <div class="col-sm-12 col-md-6 d-grid gap-2">
-            <button id="21" class="btn btn-outline-dark btn-lg">Sports</button>
-          </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-sm-12 col-md-6 d-grid gap-2">
-            <button id="26" class="btn btn-outline-dark btn-lg">Celebrities</button>
-          </div>
-          <div class="col-sm-12 col-md-6 d-grid gap-2">
-            <button id="27" class="btn btn-outline-dark btn-lg">Animals</button>
-          </div>
-        </div>
-      </div>
       </div>
       <div>
         <div id="display-progress">
@@ -74,9 +75,6 @@
           <p id="progress"></p>
           <!-- <p id="timer"></p> -->
           </div>
-        
-      </div>
-      
       </div>
       <div id="question"></div>
       <div id="answers"></div>
@@ -86,8 +84,37 @@
         <script>document.write(new Date().getFullYear());</script>
       </p>
     </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="myModalLabel">About the Quiz game</h3>
+            <a type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+          </div>
+          <div class="modal-body">
+            <p>This Quiz game was created using Open Trivia Database API.</p>
+            <p>To start the game choose a category then you will get 10 questions of medium difficulty from
+              your chosen category.
+            </p>
+            <p>If your selection is the right answer, it will highlight in <span class="green">green</span>, otherwise you will see
+              your selection highlited in <span class="red">red</span>.
+            </p>
+            <p>At the end, you will be able to see how many questions you got right.</p>
+            <p>Have fun!</p>
+          </div>
+          <div class="modal-footer">
+            <a type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="assets/js/main.js"></script>
     <script src="assets/js/end.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    
 </body>
 </html>
 

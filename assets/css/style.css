@@ -8,7 +8,7 @@
     --bright: #5aff15;
   }
 
-/* ----------------------------------------SPECIAL FONTS/COLOURS---------------------------------- */
+/* -------------------------------------SPECIAL FONTS/COLOURS-------------------------------- */
 
 body {
   margin: 0 auto;
@@ -16,12 +16,16 @@ body {
   color: var(--crayola);
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Roboto Mono', monospace;
 }
 
-p, button, ul li {
+p, button, ul li, a {
   font-family: 'Raleway', sans-serif;
+}
+
+.btn-group-lg>.btn, .btn-lg {
+  color: var(--crayola);
 }
 
 ul li a, footer p {
@@ -44,9 +48,49 @@ a:hover {
 }
 
 .red-border {
-  border: 1px solid red;
+  border: 1px solid #da0303;
+}
+
+.red {
+  color: #da0303;
+}
+
+.green {
+  color: #078607;
 }
 
 .green-border {
+  border: 1px solid #078607;
+}
+
+/* #progress-bar {
+  width: 20rem;
+  height: 4rem;
+  border: 0.3rem solid green;
+} */
+#progress span{
+  display: inline;
+}
+
+.new {
   border: 1px solid green;
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--jet);
+}
+
+.modal-dialog {
+ background-color: var(--crayola);
+ color: var(--jet);
+ font-family: 'Raleway', sans-serif;
+}
+
+.btn-secondary {
+  color: var(--crayola);
+  background-color: var(--jet);
+}
+
+.modal-footer {
+  border-top: 1px solid var(--jet);
 }
