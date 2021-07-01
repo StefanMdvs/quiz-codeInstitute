@@ -12,8 +12,17 @@
 
 body {
   margin: 0 auto;
+  min-height: 100vh;
   background-color: var(--jet);
   color: var(--crayola);
+}
+
+.page-container {
+  min-height: calc(100vh - 5rem);
+}
+
+footer {
+  height: 2.5rem;
 }
 
 h1, h2, h3 {
