@@ -81,9 +81,9 @@ class ApiRequest {
         let userSelection = e.target.innerHTML;
        
         let HTMLClass = userSelection === correctAnswer ? 
-                        'green-border' : 'red-border';
+                        'green' : 'red';
         p.classList.add(HTMLClass);
-        if(HTMLClass === 'green-border') {
+        if(HTMLClass === 'green') {
           score+=1;
         }
         
