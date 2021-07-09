@@ -5,7 +5,7 @@
 :root {
     --jet: #423e3b;
     --crayola: #d6e3f8;
-    --bright: #5aff15;
+    --bright: #56CB24;
   }
 
 /* -------------------------------------Q&A CONTAINER-------------------------------- */
@@ -80,7 +80,7 @@ a:hover {
 }
 
 .green {
-  background-color: #078607;
+  background-color: var(--bright);
 }
 
 /* #progress-bar {
@@ -91,10 +91,6 @@ a:hover {
 #progress span{
   display: inline;
 }
-
-/* .new {
-  border: 1px solid green;
-} */
 
 .modal-header {
   border-bottom: 1px solid var(--jet);
@@ -127,4 +123,8 @@ a:hover {
     width: 50%;
     margin: auto;
   }
+}
+
+.answer:hover {
+  cursor: pointer;
 }
