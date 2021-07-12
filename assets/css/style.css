@@ -110,6 +110,20 @@ a:hover {
   border-top: 1px solid var(--jet);
 }
 
+/* -------------------------------------CONTACT FORM---------------------------------- */
+
+#contact-form {
+  padding-top: 2rem;
+}
+
+.form-group {
+  padding-top: 1rem;
+  font-family: Raleway, sans-serif;
+}
+
+#textInput .form-control {
+  padding-bottom: 1rem;
+}
 /* -------------------------------------MEDIA QUERIES--------------------------------- */
 
 @media (min-width: 768px) {
