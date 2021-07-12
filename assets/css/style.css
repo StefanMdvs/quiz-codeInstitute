@@ -68,7 +68,6 @@ ul li a, footer p {
 
 a:hover {
   color: var(--crayola);
-  border: 1px solid var(--bright);
 }
 
 .custom-colours {
