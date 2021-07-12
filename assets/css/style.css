@@ -56,6 +56,12 @@ p, button, ul li, a {
   color: var(--crayola);
 }
 
+.btn-outline-dark:hover {
+  color: var(--crayola);
+  background-color: var(--jet);
+  border-color: var(--bright);
+}
+
 ul li a, footer p {
   color: var(--bright);
   background-color: var(--jet);
