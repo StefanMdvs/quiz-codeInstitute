@@ -91,7 +91,7 @@ class ApiRequest {
           p.classList.remove(HTMLClass);
           if(availableQuestions.length == 0 || this._counter >= this._max_question) {
             localStorage.setItem('rightQuestions', score);
-            return window.location.assign("/endGame.html");
+            return window.location.assign("https://stefanmdvs.github.io/quiz-codeInstitute/endGame.html");
           }else{
             let nextQuestion = this.getRandomQuestion(availableQuestions);
             this.displayQuestion(nextQuestion);
