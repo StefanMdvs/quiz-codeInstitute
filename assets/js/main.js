@@ -7,7 +7,7 @@ class ApiRequest {
   }
 
   sendHTTPRequest (type, url) {
-    var promise = new Promise(function(resolve, reject) {
+    return new Promise(function(resolve, reject) {
       const request = new XMLHttpRequest();
       request.onload = function() {
         if(request.readyState == 4) {
@@ -15,18 +15,17 @@ class ApiRequest {
             let asJSON = JSON.parse(request.responseText);
             resolve(asJSON);
           } else {
-            reject(console.log("Oops! Something went wrong", error));
+            reject();
           }
         }
       }
       request.open(type, url);
       request.send();
     });
-    return promise;
   }
 
   formattedQuestion(results) {
-    var questionArray = results.map((data) => {
+    return results.map((data) => {
       const formattedQ = {
         question: data.question
       };
@@ -44,7 +43,6 @@ class ApiRequest {
       });
       return formattedQ;
     });
-    return questionArray;
   }
 
   getRandomQuestion(questions) {
@@ -72,8 +70,6 @@ class ApiRequest {
   }
 
   checkAnswer(availableQuestions, randomQuestion) {
-    
-    
     let correctAnswer = randomQuestion.correct;
     let paragraphs = document.getElementsByClassName('answer');
     for(let p of paragraphs) {
@@ -95,18 +91,15 @@ class ApiRequest {
           }else{
             let nextQuestion = this.getRandomQuestion(availableQuestions);
             this.displayQuestion(nextQuestion);
-            console.log(nextQuestion)
             this.checkAnswer(availableQuestions, nextQuestion);
           }
         }, 1000);
       });
-      console.log(score)
     }
   }
 
   updateProgress() {
     let progressBar = document.getElementById('progress');
-    //FIX: add class to style question display
     progressBar.innerHTML = `Question ${this._counter}/${this._max_question} from ${category}`;
   }
 }
@@ -117,10 +110,8 @@ let buttons = document.getElementsByTagName('button');
 for(let button of buttons) {
   button.addEventListener('click', function(e) {
     category = e.target.innerText;
-    console.log(category)
     let id = e.target.id;
     let client = new ApiRequest();
-    //get the id of each button in order to generate the right set of questions
     let questionCategory = id === 'mixed' ?
           client.sendHTTPRequest('GET', 'https://opentdb.com/api.php?amount=10') :
           client.sendHTTPRequest('GET', `https://opentdb.com/api.php?amount=10&category=${id}`)
@@ -130,7 +121,6 @@ for(let button of buttons) {
       return availableQuestions;
     }).then((availableQuestions) => {
       let randomQuestion = client.getRandomQuestion(availableQuestions);
-      console.log(randomQuestion)
       client.displayQuestion(randomQuestion);
       client.checkAnswer(availableQuestions, randomQuestion);
       client.updateProgress();
