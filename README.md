@@ -91,4 +91,30 @@ In addition I have also used the following:
 - [Favicon](https://favicon.io/) for generating the favicon image 
 - [Mockup generator](http://techsini.com/multi-mockup/index.php) used to generate the mockup of the project
 - [HTML validator](https://validator.w3.org/) used to check for errors in html files
-- [CSS validator](https://jigsaw.w3.org/css-validator/) used to check for errors in stylesheet
+- [CSS validator](https://jigsaw.w3.org/css-validator/) used to check for errors in stylesheet.
+
+# 6. Testing
+*Online validators*  
+The project's source code was tested by file upload using [W3C HTML Validator](https://validator.w3.org/) and [CSS Validator](https://jigsaw.w3.org/css-validator/) and no errors are returned. However, when testing by URI, the report throws 17 errors associated with Bootstrap CDN. Full size pictures of the tests can be found here:
+- [HTML Validator](assets/images/html-validator.png)
+- [CSS Validator (success)](assets/images/css-validator.png)
+- [CSS Validator (errors)](assets/images/errors-bootstrap.png).  
+
+*Device testing*  
+The site was tested across: Google Chrome, Samsung Internet and Amazon Silk web browser. The testing process followed the user stories:
+>User can intuitevely navigate across the website
+>
+Website is intuitive, links send user to the right page.
+>User can choose a category they want to play
+>
+Buttons work and load the right category of questions.
+>User can see their quiz progress
+>
+After each selected answer, the counting is increasing and user can see how further down the quiz they are.
+>User can see how they were doing at the end
+>
+End game page is loading and the correct number of questions is being displayed. Also the call to action button sends the user back on the main page where a different category can be chosen.
+>User can contact the developer
+>
+After filling in the contact form, the message is being sent over to the developer using EmailJS. Fields reset after successfully sending the message.  
+
