@@ -33,7 +33,7 @@ The project was created as part of my journey with Code Institute for the Milest
 4. User can see how they were doing at the end;
 5. User can contact the developer.
 ## Structure
-The website contains the landing page, the *About* section containing information about the game, and the *Contact* page where user can fill in a contact form.  
+The website contains the landing page where user can choose a category they wish to play, the *About* section containing information about the game, and the *Contact* page where user can fill in a contact form.  
 For a good user experience, the header and footer are displayed on each page and a Facebook share button has been added.
 ## Design
 ### Colour scheme
