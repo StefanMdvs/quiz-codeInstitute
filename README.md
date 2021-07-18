@@ -1,4 +1,4 @@
-![mockup-image](assets/images/mockup.png)
+![mockup-image](assets/testing/mockup.png)
 ## **Table of contents**
 [**1. Name**](#1-project's-name)
 
@@ -96,9 +96,9 @@ In addition I have also used the following:
 # 6. Testing
 *Online validators*  
 The project's source code was tested by file upload using [W3C HTML Validator](https://validator.w3.org/) and [CSS Validator](https://jigsaw.w3.org/css-validator/) and no errors are returned. However, when testing by URI, the report throws 17 errors associated with Bootstrap CDN. Full size pictures of the tests can be found here:
-- [HTML Validator](assets/images/html-validator.png)
-- [CSS Validator (success)](assets/images/css-validator.png)
-- [CSS Validator (errors)](assets/images/errors-bootstrap.png).  
+- [HTML Validator](assets/testing/html-validator.png)
+- [CSS Validator (success)](assets/testing/css-validator.png)
+- [CSS Validator (errors)](assets/testing/errors-bootstrap.png).  
 
 *Device testing*  
 The site was tested across: Google Chrome, Samsung Internet and Amazon Silk web browser. The testing process followed the user stories:
@@ -118,3 +118,7 @@ End game page is loading and the correct number of questions is being displayed.
 >
 After filling in the contact form, the message is being sent over to the developer using EmailJS. Fields reset after successfully sending the message.  
 
+*Performance*  
+I have used Lighthouse for testing the performance of the website and after adding the meta tags the report for mobile testing shows 90 and above for Performance, Accessibility and SEO and short to 90 for Best practices. The issues here are related to Facebook share button, more specifically to the plugins. The desktop testing report shows the SEO close to 90 too. The full size reports can be found here:
+- [Lighthouse mobile test report](assets/testing/lighthouse-mobile.pdf)
+- [Lighthouse desktop test report](assets/testing/lighthouse-desktop.pdf)  
