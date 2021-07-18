@@ -148,3 +148,12 @@ To download the project:
 1. Click on the "Code" button
 2. Select "Download ZIP" and your chosen folder on your local machine
 3. Unzip it locally.
+
+# 8. Credits
+## 8.1 Code
+The project was built following the tutorials of [James Q Quick](https://www.youtube.com/playlist?list=PLDlWc9AfQBfZIkdVaOQXi1tizJeNJipEx) on YouTube, mostly following the same structure. I have chosen to work with classes which unlike the original code required some adjustments in structure.
+## 8.2 Media
+The image used to generate the favicon was created be [Vectors Market](https://www.flaticon.com/authors/vectors-market) for [flaticon.com](https://www.flaticon.com/).
+## 8.3 Acknowledgements
+I owe a massive "Thank you" to my friend Marcel, who as a developer guided me to succsesfully get this project up and running.  
+I am also grateful for my mentor's input, Spencer Barriball, for the guidance, encouragements and supportive attitude.
