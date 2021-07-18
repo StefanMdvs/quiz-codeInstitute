@@ -20,8 +20,9 @@
 
 [**6. Testing**](#6-testing)
 
-[**7. Deployment**](#7-deployment)
-- [7.1 Run project locally](#71-run-project-locally)
+[**7. Deployment and cloning**](#7-deployment-and-cloning)
+- [7.1 Deployment](#71-deployment)
+- [7.2 Cloning](#72-cloning)
 
 [**8. Credits**](#8-credits)
 - [8.1 Code](#81-code)
@@ -122,3 +123,28 @@ After filling in the contact form, the message is being sent over to the develop
 I have used Lighthouse for testing the performance of the website and after adding the meta tags the report for mobile testing shows 90 and above for Performance, Accessibility and SEO and short to 90 for Best practices. The issues here are related to Facebook share button, more specifically to the plugins. The desktop testing report shows the SEO close to 90 too. The full size reports can be found here:
 - [Lighthouse mobile test report](assets/testing/lighthouse-mobile.pdf)
 - [Lighthouse desktop test report](assets/testing/lighthouse-desktop.pdf)  
+
+# 7. Deployment and cloning
+## 7.1 Deployment
+The project used the [Code Institute's template](https://github.com/Code-Institute-Org/gitpod-full-template) to create a GitHub repository, all other code was created in Visual Studio Code locally and pushed onto GitHub using the Terminal.  
+The deployment was done using GitHub pages, following these steps:  
+
+1. Under the "Settings" tab, I scrolled down to GitHub Pages;
+2. The "Master Branch" was selected next from the drop-down;
+3. After pressing "Save", the site was published online.  
+
+## 7.2 Cloning
+The project can be run locally either by cloning or by downloading it, following these steps:  
+To clone the project:
+
+1. Click on the "Code" button and select how to clone it: using HTTPS, SSH or GitHub CLI;
+2. Click on the copy icon to the right
+3. From a terminal window, change to the local directory where you want to clone your repository
+4. Use ```git clone``` and paste in the command you copied before.  
+
+If the command was succsessfull, a new subfolder should appear having the same name as the repository cloned.  
+To download the project:
+
+1. Click on the "Code" button
+2. Select "Download ZIP" and your chosen folder on your local machine
+3. Unzip it locally.
