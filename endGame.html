@@ -14,15 +14,20 @@
   </head>
   <body>
     <header>
-      <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#myModal2" >About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-  </header>
+      <nav class="navbar pl-2">
+        <a class="navbar-brand" href="index.html">Quiz Time!</a>
+        <div class="navbar navbar-expand" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#myModal">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <div class="container page-container">
       <div class="text-center pt-md-4">
         <h1 class="p-3 mt-sm-5">Quiz complete!</h1>
@@ -41,7 +46,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h3 class="modal-title" id="myModal2Label">About the Quiz game</h3>
-            <a type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+            <a class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
           </div>
           <div class="modal-body">
             <p>This Quiz game was created using Open Trivia Database API.</p>
