@@ -23,14 +23,19 @@
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v11.0" nonce="h7qF1hIb">
   </script>
     <header>
-        <ul class="nav">
+      <nav class="navbar pl-2">
+        <a class="navbar-brand" href="index.html">Quiz Time!</a>
+        <div class="navbar navbar-expand" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#myModal" >About</a>
+              <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#myModal">About</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
+        </div>
+      </nav>
     </header>
     <section class="container page-container">
       <div id="hide">
@@ -98,7 +103,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h3 class="modal-title" id="myModalLabel">About the Quiz game</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <a href="" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
           </div>
           <div class="modal-body">
             <p>This Quiz game was created using Open Trivia Database API.</p>

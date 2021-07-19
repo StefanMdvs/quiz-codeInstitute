@@ -5,7 +5,7 @@
 :root {
     --jet: #423e3b;
     --crayola: #d6e3f8;
-    --bright: #56CB24;
+    --bright: #82ff9e;
   }
 
 /* -------------------------------------Q&A CONTAINER-------------------------------- */
@@ -18,7 +18,6 @@
 }
 
 .answer, #progress {
-  /* padding-bottom: 1rem; */
   font-weight: 400;
   font-size: 1rem;
   letter-spacing: 4px;
@@ -35,7 +34,7 @@ body {
 }
 
 .page-container {
-  min-height: calc(100vh - 5rem);
+  min-height: calc(100vh - 6.5rem);
   /* solution found here
   https://stackoverflow.com/questions/643879/css-to-make-html-page-footer-stay-at-bottom-of-the-page-with-a-minimum-height-b */
 }
@@ -48,7 +47,7 @@ h1, h2, h3 {
   font-family: 'Roboto Mono', monospace;
 }
 
-p, button, ul li, a {
+p, button{
   font-family: 'Raleway', sans-serif;
 }
 
@@ -77,13 +76,19 @@ ul li a, footer p {
   background-color: var(--jet);
 }
 
-/* display nav links on left/right side */
-.nav {
-  justify-content: space-between;
+.navbar a {
+  color: var(--bright);
+  font-family: 'Roboto mono', monospace;
+}
+.navbar {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
-a:hover {
-  color: var(--crayola);
+ul li a:hover {
+  color: var(--jet);
+  background-color: var(--bright);
+  font-weight: bolder;
 }
 
 .custom-colours {
@@ -91,18 +96,15 @@ a:hover {
 }
 
 .red {
-  background-color: #da0303;
+  color: var(--jet);
+  background-color: #ff7e6b;
 }
 
 .green {
+  color: var(--jet);
   background-color: var(--bright);
 }
 
-/* #progress-bar {
-  width: 20rem;
-  height: 4rem;
-  border: 0.3rem solid green;
-} */
 #progress span{
   display: inline;
 }
@@ -145,6 +147,10 @@ a:hover {
 @media (min-width: 768px) {
   .page-container {
     width: 66%;
+  }
+  .navbar {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 @media (min-width: 992px){
