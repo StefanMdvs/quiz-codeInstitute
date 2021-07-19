@@ -65,6 +65,7 @@ class ApiRequest {
     hideCategories.style.display = 'none';
     document.getElementById('question').innerHTML = currQ.question;
     document.getElementById('answers').innerHTML = displayedAnswers;
+    hasAnswered = true;
 
     this.updateProgress();
   }
@@ -74,6 +75,8 @@ class ApiRequest {
     let paragraphs = document.getElementsByClassName('answer');
     for(let p of paragraphs) {
       p.addEventListener('click', (e) => {
+        if (!hasAnswered) return;
+        hasAnswered = false;
         let userSelection = e.target.innerHTML;
        
         let HTMLClass = userSelection === correctAnswer ? 
@@ -87,7 +90,8 @@ class ApiRequest {
           p.classList.remove(HTMLClass);
           if(availableQuestions.length == 0 || this._counter >= this._max_question) {
             localStorage.setItem('rightQuestions', score);
-            return window.location.assign("https://stefanmdvs.github.io/quiz-codeInstitute/endGame.html");
+            return window.location.assign('/endGame.html');
+            // "https://stefanmdvs.github.io/quiz-codeInstitute/endGame.html"
           }else{
             let nextQuestion = this.getRandomQuestion(availableQuestions);
             this.displayQuestion(nextQuestion);
@@ -105,6 +109,7 @@ class ApiRequest {
 }
 
 let score = 0;
+let hasAnswered = false;
 let category;
 let buttons = document.getElementsByTagName('button');
 for(let button of buttons) {
