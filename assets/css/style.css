@@ -23,6 +23,9 @@
   letter-spacing: 4px;
 }
 
+.answer:hover {
+  cursor: pointer;
+}
 
 /* -------------------------------------SPECIAL FONTS/COLOURS-------------------------------- */
 
@@ -88,6 +91,7 @@ ul li a, footer p {
 ul li a:hover {
   color: var(--jet);
   background-color: var(--bright);
+  border-radius: .3rem;
   font-weight: bolder;
 }
 
@@ -108,6 +112,8 @@ ul li a:hover {
 #progress span{
   display: inline;
 }
+
+/* -------------------------------------MODAL----------------------------------------- */
 
 .modal-header {
   border-bottom: 1px solid var(--jet);
@@ -142,6 +148,7 @@ ul li a:hover {
 #textInput .form-control {
   padding-bottom: 1rem;
 }
+
 /* -------------------------------------MEDIA QUERIES--------------------------------- */
 
 @media (min-width: 768px) {
@@ -158,8 +165,4 @@ ul li a:hover {
     width: 50%;
     margin: auto;
   }
-}
-
-.answer:hover {
-  cursor: pointer;
 }
