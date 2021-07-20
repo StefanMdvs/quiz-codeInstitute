@@ -18,7 +18,7 @@ class ApiRequest {
             reject();
           }
         }
-      }
+      };
       request.open(type, url);
       request.send();
     });
@@ -62,7 +62,7 @@ class ApiRequest {
     const {question, correct, answer, ...answers} = currQ;
     let displayedAnswers = [];
     for (let answer in answers) {
-      displayedAnswers += `<p class="answer">${answers[answer]}</p>`
+      displayedAnswers += `<p class="answer">${answers[answer]}</p>`;
     }
     let hideCategories = document.getElementById('hide');
     hideCategories.style.display = 'none';
@@ -123,7 +123,7 @@ for(let button of buttons) {
     let client = new ApiRequest();
     let questionCategory = id === 'mixed' ?
           client.sendHTTPRequest('GET', 'https://opentdb.com/api.php?amount=10') :
-          client.sendHTTPRequest('GET', `https://opentdb.com/api.php?amount=10&category=${id}`)
+          client.sendHTTPRequest('GET', `https://opentdb.com/api.php?amount=10&category=${id}`);
     questionCategory.then((data) => {
       let formattedData = data.results;
       let availableQuestions = client.formattedQuestion(formattedData);
@@ -133,6 +133,6 @@ for(let button of buttons) {
       client.displayQuestion(randomQuestion);
       client.checkAnswer(availableQuestions, randomQuestion);
       client.updateProgress();
-    })
-  })
+    });
+  });
 }
