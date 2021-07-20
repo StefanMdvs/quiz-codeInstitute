@@ -98,14 +98,18 @@ In addition I have also used the following:
 - [Favicon](https://favicon.io/) for generating the favicon image 
 - [Mockup generator](http://techsini.com/multi-mockup/index.php) used to generate the mockup of the project
 - [HTML validator](https://validator.w3.org/) used to check for errors in html files
-- [CSS validator](https://jigsaw.w3.org/css-validator/) used to check for errors in stylesheet.
+- [CSS validator](https://jigsaw.w3.org/css-validator/) used to check for errors in stylesheet
+- [JS hint](https://jshint.com/) used to check the quality of JS code.
 
 # 6. Testing
 ## 6.1 Online validators
 The project's source code was tested by file upload using [W3C HTML Validator](https://validator.w3.org/) and [CSS Validator](https://jigsaw.w3.org/css-validator/) and no errors are returned. However, when testing by URI, the report throws 17 errors associated with Bootstrap CDN. Full size pictures of the tests can be found here:
 - [HTML Validator](assets/testing/html-validator.png)
 - [CSS Validator (success)](assets/testing/css-validator.png)
-- [CSS Validator (errors)](assets/testing/errors-bootstrap.png).  
+- [CSS Validator (errors)](assets/testing/errors-bootstrap.png)
+- [JS code check](assets/testing/js-validator.png)  
+
+After using JShint tool, a few missing semicolons were added to the code.
 
 ## 6.2 User stories testing
 The site was tested across: Google Chrome, Samsung Internet and Amazon Silk web browser. The testing process followed the user stories:
