@@ -15,7 +15,6 @@
     <link rel="shortcut icon" type="image/jpg" href="assets/images/favicon.ico"/>
     <!-- "Icon made by <a href="https://www.flaticon.com/authors/vectors-market">Vectors Market</a> 
       from www.flaticon.com" -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
   <div id="fb-root">
@@ -23,18 +22,15 @@
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v11.0" nonce="h7qF1hIb">
   </script>
     <header>
-      <nav class="navbar pl-2">
-        <a class="navbar-brand" href="index.html">Quiz Time!</a>
-        <div class="navbar navbar-expand" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#myModal">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
+      <nav>
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#myModal">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
       </nav>
     </header>
     <section class="container page-container">
@@ -77,10 +73,6 @@
             </div>
           </div>
         </div>
-        <div class="text-center mt-3">
-          <div class="fb-share-button" data-href="https://stefanmdvs.github.io/quiz-codeInstitute/index.html" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fstefanmdvs.github.io%2Fquiz-codeInstitute%2Findex.html&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
-          </div>
-        </div>
       </div>
       <div id="question-answer-display">
         <div id="display-progress">
@@ -90,12 +82,9 @@
         <div id="question"></div>
         <div id="answers"></div>
       </div>
-      
     </section>
     <footer class="container footer text-center">
-      <p>Created by <i>Stefan Medves</i> 
-        <script>document.write(new Date().getFullYear());</script>
-      </p>
+      <p><i>Stefan Medves</i> 2021</p>
     </footer>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
