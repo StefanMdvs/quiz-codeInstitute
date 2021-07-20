@@ -121,12 +121,13 @@ Website is intuitive, links send user to the right page.
 Buttons work and load the right category of questions.
 >User can see their quiz progress
 >
-After each selected answer, the counting is increasing and user can see how further down the quiz they are.
+After each selected answer, the counting is increasing and user can see how further down the quiz they are. Questions are being displayed until counting gets to 10.
 >User can see how they were doing at the end
 >
-End game page is loading and the correct number of questions is being displayed. Also the call to action button sends the user back on the main page where a different category can be chosen.
+End game page is loading and the number of  answers they got right is being displayed. Also the call to action button sends the user back on the main page where a different category can be chosen.
 >User can contact the developer
 >
+Form field can be submitted only by filling in the email address field. This has been resolved by adding the *required* attribute to the other two fields (*Name* and *textarea*).  
 After filling in the contact form, the message is being sent over to the developer using EmailJS. Fields reset after successfully sending the message.  
 
 ## 6.3 Bugs
