@@ -69,14 +69,16 @@ Wireframes are available for each section and different screen sizes. Full size 
 ## 4.1 Existing features
 The project consists of:
 - Landing page
-- Game page
+- Game section
 - End game page
 - Contact page.
 
-The *landing* page contains the project title and a call to action to choose a category to play. The user can choose one category to play and then the quiz game begins.  
-Also on the landing page user can click the *About* button and a modal pops up with a short info about the quiz.  
-The *game* page loads the questions and answers from the chosen category and the user needs to select an answer before moving on to the next question.  
+The *landing* page contains the project title and a call to action to choose a category to play. Also here user can click the *About* button and a modal pops up with a short info about the quiz. 
+![image](assets/images/home-print-screen.png)
+ The user can choose one category to play and then the quiz game begins. The *game* section loads the questions and answers from the chosen category and the user needs to select an answer before moving on to the next question. If their selection is the right one, the answer highlights in green, otherwise it highlights in red.
+![image](assets/images/game-print-screen.png)
 At the end of the quiz, the user is presented with the number of questions they got right and a call to action button inviting them to play again.  
+![image](assets/images/end-print-screen.png)
 The *Contact* page contains a contact form which allows user to send an email using client-side technology only.
 ## 4.2 Features left to implement
 One of the features I wish to implement in the future is adding the option to choose the **difficulty** of the questions, as the API used has 3 difficulty levels. For the time being the game loads the *medium* level, but I think it would increase the user experience if the other two categories were available to choose from.  
