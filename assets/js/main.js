@@ -24,6 +24,7 @@ class ApiRequest {
     });
   }
 
+  // this method follows James Q Quick's YouTube tutorial
   formattedQuestion(results) {
     return results.map((data) => {
       const formattedQ = {
@@ -45,6 +46,7 @@ class ApiRequest {
     });
   }
 
+  // this method follows James Q Quick's YouTube tutorial
   getRandomQuestion(questions) {
     let questionIndex = Math.floor(Math.random() * questions.length);
     let currentQuestion = questions[questionIndex];
@@ -53,6 +55,7 @@ class ApiRequest {
     return currentQuestion;
   }
 
+  // this method follows James Q Quick's YouTube tutorial
   displayQuestion(currQ) {
     this._counter++;
     //use object destructuring to access the answers
@@ -70,6 +73,7 @@ class ApiRequest {
     this.updateProgress();
   }
 
+  // this method follows James Q Quick's YouTube tutorial
   checkAnswer(availableQuestions, randomQuestion) {
     let correctAnswer = randomQuestion.correct;
     let paragraphs = document.getElementsByClassName('answer');
@@ -101,6 +105,7 @@ class ApiRequest {
     }
   }
 
+  // this method follows James Q Quick's YouTube tutorial
   updateProgress() {
     let progressBar = document.getElementById('progress');
     progressBar.innerHTML = `Question ${this._counter}/${this._max_question} from ${category}`;
