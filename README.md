@@ -19,6 +19,10 @@
 [**5. Technologies used**](#5-technologies-used)
 
 [**6. Testing**](#6-testing)
+- [6.1 Online validators](#61-online-validators)
+- [6.2 User stories testing](#62-user-stories-testing)
+- [6.3 Bugs](#63-bugs)
+- [6.4 Performance](#64-performance)
 
 [**7. Deployment and cloning**](#7-deployment-and-cloning)
 - [7.1 Deployment](#71-deployment)
@@ -44,7 +48,7 @@ The project was created as part of my journey with Code Institute for the Milest
 5. User can contact the developer.
 ## 3.2 Structure
 The website contains the landing page where user can choose a category they wish to play, the *About* section containing information about the game, and the *Contact* page where user can fill in a contact form.  
-For a good user experience, the header and footer are displayed on each page and a Facebook share button has been added.
+
 ## 3.3 Design
 ### 3.3.1 Colour scheme
 I have started from the dark grey color as a background and from there I chose a light grey/blue colour for the text. For the navigation links and footer I went for a strong green, the same colour being used as border colour on hover over buttons.
@@ -95,13 +99,13 @@ In addition I have also used the following:
 - [CSS validator](https://jigsaw.w3.org/css-validator/) used to check for errors in stylesheet.
 
 # 6. Testing
-*Online validators*  
+## 6.1 Online validators
 The project's source code was tested by file upload using [W3C HTML Validator](https://validator.w3.org/) and [CSS Validator](https://jigsaw.w3.org/css-validator/) and no errors are returned. However, when testing by URI, the report throws 17 errors associated with Bootstrap CDN. Full size pictures of the tests can be found here:
 - [HTML Validator](assets/testing/html-validator.png)
 - [CSS Validator (success)](assets/testing/css-validator.png)
 - [CSS Validator (errors)](assets/testing/errors-bootstrap.png).  
 
-*Device testing*  
+## 6.2 User stories testing
 The site was tested across: Google Chrome, Samsung Internet and Amazon Silk web browser. The testing process followed the user stories:
 >User can intuitevely navigate across the website
 >
@@ -119,7 +123,11 @@ End game page is loading and the correct number of questions is being displayed.
 >
 After filling in the contact form, the message is being sent over to the developer using EmailJS. Fields reset after successfully sending the message.  
 
-*Performance*  
+## 6.3 Bugs
+While testing I have discovered the following bug: user could click on multiple answers and the questions displayed would skip according to the number of clicks. For example, if 2 answers were selected the question display would skip 2 questions.  
+The bug was fixed by adding a variable to check if the user has answered and set it to false while the user made their current selection. 
+
+## 6.4 Performance 
 I have used Lighthouse for testing the performance of the website and after adding the meta tags the report for mobile testing shows 90 and above for Performance, Accessibility and SEO and short to 90 for Best practices. The issues here are related to Facebook share button, more specifically to the plugins. The desktop testing report shows the SEO close to 90 too. The full size reports can be found here:
 - [Lighthouse mobile test report](assets/testing/lighthouse-mobile.pdf)
 - [Lighthouse desktop test report](assets/testing/lighthouse-desktop.pdf)  
