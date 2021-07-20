@@ -128,13 +128,17 @@ While testing I have discovered the following bug: user could click on multiple 
 The bug was fixed by adding a variable to check if the user has answered and set it to false while the user made their current selection. 
 
 ## 6.4 Performance 
-I have used Lighthouse for testing the performance of the website and after adding the meta tags the report for mobile testing shows 90 and above for Performance, Accessibility and SEO and short to 90 for Best practices. The issues here are related to Facebook share button, more specifically to the plugins. The desktop testing report shows the SEO close to 90 too. The full size reports can be found here:
+I have used Lighthouse for testing the performance of the website and after adding the meta tags the report for mobile testing shows scores of 90 and above. The desktop testing report shows the SEO at 89. The full size reports can be found here:
 - [Lighthouse mobile test report](assets/testing/lighthouse-mobile.pdf)
 - [Lighthouse desktop test report](assets/testing/lighthouse-desktop.pdf)  
 
 # 7. Deployment and cloning
 ## 7.1 Deployment
-The project used the [Code Institute's template](https://github.com/Code-Institute-Org/gitpod-full-template) to create a GitHub repository, all other code was created in Visual Studio Code locally and pushed onto GitHub using the Terminal.  
+The project used the [Code Institute's template](https://github.com/Code-Institute-Org/gitpod-full-template) to create a GitHub repository, all other code was created in Visual Studio Code locally and pushed into GitHub using the Terminal and the following commands:  
+- ```git clone```, to clone the gitHub repository; 
+- ```git add```, to stage files to be commited;
+- ```git push```, to upload content. 
+
 The deployment was done using GitHub pages, following these steps:  
 
 1. Under the "Settings" tab, I scrolled down to GitHub Pages;
