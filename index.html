@@ -16,101 +16,96 @@
     from www.flaticon.com" -->
 </head>
 <body>
-  <div id="fb-root">
-  </div>
-  </script>
-    <header>
-      <nav>
-        <ul class="nav justify-content-end">
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#myModal">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <section class="container page-container">
-      <div id="hide">
-        <h1 class="text-center p-3">It's QUIZ time!</h1>
-        <p class="text-center p-2 mb-0">Get your brain in <strong>shape</strong> for quiz night.</p>
-        <h2 class="text-center p-3 mb-3">Choose a category</h2>
-        <div>
-          <div class="row text-center">
-            <!-- The buttons' id will match the id from the API call -->
-            <div class="col-sm-12 col-md-6 d-grid gap-2 mb-sm-3">
-              <button id="mixed" class="btn btn-outline-dark btn-lg">Mixed</button>
-            </div>
-            <div class="col-sm-12 col-md-6 d-grid gap-2 mb-sm-3">
-              <button id="9" class="btn btn-outline-dark btn-lg">General knowledge</button> 
-            </div>
+  <header>
+    <nav>
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#myModal">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section class="container page-container">
+    <div id="hide">
+      <h1 class="text-center p-3">It's QUIZ time!</h1>
+      <p class="text-center p-2 mb-0">Get your brain in <strong>shape</strong> for quiz night.</p>
+      <h2 class="text-center p-3 mb-3">Choose a category</h2>
+      <div>
+        <div class="row text-center">
+          <!-- The buttons' id will match the id from the API call -->
+          <div class="col-sm-12 col-md-6 d-grid gap-2 mb-sm-3">
+            <button id="mixed" class="btn btn-outline-dark btn-lg">Mixed</button>
           </div>
-          <div class="row text-center">
-            <div class="col-sm-12 col-md-6 d-grid gap-2 mb-sm-3">
-              <button id="11" class="btn btn-outline-dark btn-lg">Film</button> 
-            </div>
-            <div class="col-sm-12 col-md-6 d-grid gap-2 mb-sm-3">
-              <button id="12" class="btn btn-outline-dark btn-lg">Music</button>
-            </div>
-          </div>
-          <div class="row text-center">
-            <div class="col-sm-12 col-md-6 d-grid gap-2 mb-sm-3">
-              <button id="14" class="btn btn-outline-dark btn-lg">Television</button>
-            </div>
-            <div class="col-sm-12 col-md-6 d-grid gap-2">
-              <button id="21" class="btn btn-outline-dark btn-lg mb-sm-3">Sports</button>
-            </div>
-          </div>
-          <div class="row text-center">
-            <div class="col-sm-12 col-md-6 d-grid gap-2 mb-sm-3">
-              <button id="26" class="btn btn-outline-dark btn-lg">Celebrities</button>
-            </div>
-            <div class="col-sm-12 col-md-6 d-grid gap-2 mb-sm-3">
-              <button id="27" class="btn btn-outline-dark btn-lg">Animals</button>
-            </div>
+          <div class="col-sm-12 col-md-6 d-grid gap-2 mb-sm-3">
+            <button id="9" class="btn btn-outline-dark btn-lg">General knowledge</button> 
           </div>
         </div>
-      </div>
-      <div id="question-answer-display">
-        <div id="display-progress">
-          <!-- this div will display the progress as we click through the questions -->
-          <p id="progress"></p>
-        </div>
-        <div id="question"></div>
-        <div id="answers"></div>
-      </div>
-    </section>
-    <footer class="container footer text-center">
-      <p><i>Stefan Medves</i> 2021</p>
-    </footer>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="myModalLabel">About the Quiz game</h3>
-            <a href="" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+        <div class="row text-center">
+          <div class="col-sm-12 col-md-6 d-grid gap-2 mb-sm-3">
+            <button id="11" class="btn btn-outline-dark btn-lg">Film</button> 
           </div>
-          <div class="modal-body">
-            <p>This Quiz game was created using Open Trivia Database API.</p>
-            <p>To start the game choose a category then you will get 10 questions of medium difficulty from
-              your chosen category.
-            </p>
-            <p>If your selection is the right answer, it will highlight in green, otherwise you will see
-              your selection highlited in red.
-            </p>
-            <p>At the end, you will be able to see how many questions you got right.</p>
-            <p>Have fun!</p>
+          <div class="col-sm-12 col-md-6 d-grid gap-2 mb-sm-3">
+            <button id="12" class="btn btn-outline-dark btn-lg">Music</button>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-sm-12 col-md-6 d-grid gap-2 mb-sm-3">
+            <button id="14" class="btn btn-outline-dark btn-lg">Television</button>
+          </div>
+          <div class="col-sm-12 col-md-6 d-grid gap-2">
+            <button id="21" class="btn btn-outline-dark btn-lg mb-sm-3">Sports</button>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-sm-12 col-md-6 d-grid gap-2 mb-sm-3">
+            <button id="26" class="btn btn-outline-dark btn-lg">Celebrities</button>
+          </div>
+          <div class="col-sm-12 col-md-6 d-grid gap-2 mb-sm-3">
+            <button id="27" class="btn btn-outline-dark btn-lg">Animals</button>
           </div>
         </div>
       </div>
     </div>
-
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/end.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <div id="question-answer-display">
+      <div id="display-progress">
+        <!-- this div will display the progress as we click through the questions -->
+        <p id="progress"></p>
+      </div>
+      <div id="question"></div>
+      <div id="answers"></div>
+    </div>
+  </section>
+  <footer class="container footer text-center">
+    <p><i>Stefan Medves</i> 2021</p>
+  </footer>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="myModalLabel">About the Quiz game</h3>
+          <a href="" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></a>
+        </div>
+        <div class="modal-body">
+          <p>This Quiz game was created using Open Trivia Database API.</p>
+          <p>To start the game choose a category then you will get 10 questions of medium difficulty from
+            your chosen category.
+          </p>
+          <p>If your selection is the right answer, it will highlight in green, otherwise you will see
+            your selection highlited in red.
+          </p>
+          <p>At the end, you will be able to see how many questions you got right.</p>
+          <p>Have fun!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
 </html>
 
