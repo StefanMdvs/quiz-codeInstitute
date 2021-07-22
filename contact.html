@@ -25,10 +25,8 @@
         event.preventDefault();
         emailjs.sendForm('contact_service', 'contact_form', this)
           .then(function() {
-            console.log('SUCCESS!');
             form.reset();
           }, function(error) {
-            console.log('FAILED...', error);
           });
       });
     }
