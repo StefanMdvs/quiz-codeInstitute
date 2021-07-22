@@ -132,11 +132,12 @@ After filling in the contact form, the message is being sent over to the develop
 
 ## 6.3 Bugs
 While testing I have discovered the following:
-- bug: user could click on multiple answers and the questions displayed would skip according to the number of clicks. For example, if 2 answers were selected the question display would skip 2 questions.  
+- BUG: user could click on multiple answers and the questions displayed would skip according to the number of clicks. For example, if 2 answers were selected the question display would skip 2 questions.  
 The bug was fixed by adding a variable to check if the user has answered and set it to false while the user made their current selection. 
 - console error: *Uncaught TypeError: Cannot set property 'innerText' of null
     at end.js:5*  
-    The error was fixed by wrapping the code in a function and adding an event listener that listened for the page to be loaded before executing the function.
+    The error was fixed by wrapping the code in a function and adding an event listener that listened for the page to be loaded before executing the function.  
+- BUG: the following bug was created after trying to fix the above error. When the last page was loaded, the paragraph holding the number of right questions wouldn't show anything. [Here](assets/testing/error-right-questions.png) is the page loaded at the end. The bug was fixed by reverting the steps taken when trying to fix the error (remove the function and the event handler) and by adding the strict equality operator when checking for the right number of questions stored in local storage, as that variable's type was not a number but a string.
 
 ## 6.4 Performance 
 I have used Lighthouse for testing the performance of the website and after adding the meta tags the report for mobile testing shows scores of 90 and above. The desktop testing report shows the SEO at 89. The full size reports can be found here:
